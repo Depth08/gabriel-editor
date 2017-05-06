@@ -1,0 +1,53 @@
+/* Editor Grid Look and Feel */
+.editor-grid-rect {
+    fill: #213ea7;
+    stroke: #fff;
+    stroke-width: 6;
+    stroke-dasharray: 3,10000;
+}
+
+.building {
+    stroke-width: 5;
+    stroke-dasharray: 9,12;
+    stroke: #fff;
+    fill: none;
+}
+
+.building.finished {
+    fill: #4791db;
+    stroke: #fff;
+    stroke-dasharray: none;
+}
+
+.building.selected {
+    fill: #36a7ff;
+}
+
+.building.moving {
+    stroke-dasharray: 50,100;
+    stroke-dashoffset: 25;
+}
+
+.wall {
+    stroke-width: 3;
+    stroke-dasharray: 12,25;
+    stroke: #fff;
+    fill: none;
+}
+
+.wall.finished {
+    stroke: #fff;
+    stroke-dasharray: none;
+}
+
+/* Map container specific coloring */
+.map-container {
+    height: 100%;
+    overflow: hidden;
+    background-color: #213ea7;
+}
+
+.map-container svg {
+    stroke: black;
+    stroke-width: 5px;
+}

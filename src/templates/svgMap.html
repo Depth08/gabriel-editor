@@ -1,0 +1,21 @@
+<svg id="svgMap" ng-click="svgCtrl.clickEditor(shell.selectedTool, $event)" width="100%" height="100%" ng-controller="SvgController as svgCtrl" >
+
+    <!-- The Background Grid -->
+    <g id="gridLines" ng-click="svgCtrl.clickVoid(shell.selectedTool, $event)" ng-mousemove="svgCtrl.hoverVoid(shell.selectedTool, $event)">
+        <pattern id="grid" ng-attr-width="{{ svgCtrl.getGridSize() }}" ng-attr-height="{{ svgCtrl.getGridSize() }}" patternUnits="userSpaceOnUse" >
+            <rect class="editor-grid-rect" width="100" height="100" ></rect>
+        </pattern>
+        <rect height="10000" width="10000" overflow="hidden" fill="url(#grid)" ></rect>
+    </g>
+
+    <g id="buildings">
+        <g class="building" ng-repeat="building in svgCtrl.getBuildings()">
+            <!-- The main outline of the building -->
+            <polyline ng-hide="building.finished" class="building" ng-attr-points="{{ svgCtrl.toSvgPoints(building.buildingOutline, building.origin) }}"></polyline>
+            <polygon ng-mousemove="svgCtrl.hoverBuilding(shell.selectedTool, $event, $index)" ng-click="svgCtrl.clickBuilding(shell.selectedTool, $event, $index)" ng-show="building.finished" data-id="{{ $index }}" class="building" ng-class="{finished: building.finished, selected: building.selected}" ng-attr-points="{{ svgCtrl.toSvgPoints(building.buildingOutline, building.origin) }}"></polygon>
+
+            <!-- The walls inside of the building -->
+            <polyline ng-repeat="wall in building.walls" class="wall" ng-class="{finished: wall.finished}" ng-attr-points="{{ svgCtrl.toSvgPoints(wall.corners, building.origin) }}"></polyline>
+        </g>
+    </g>
+</svg>

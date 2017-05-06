@@ -1,0 +1,96 @@
+/*
+    Gabriel control-room web-app component styling
+    @author rafael.mindreau
+
+    This file contains the component styling for the Gabriel web-app
+    These components are specifically the one's designed by our team
+    Does not include any style-guide specific components (i.e. bootstrap, material, flat, ...)
+
+*/
+
+/*************************/
+/* Menus and drawers     */
+/*************************/
+
+.drawer-left {
+    position: fixed;
+    top: 0; left: 0;
+
+    width: 25%;
+    max-width: 25rem;
+    height: 100%;
+
+    background-color: #363F45;
+    color: white;
+}
+
+.drawer-header {
+    padding: 1rem;
+
+    background-color: #E74C3C;
+}
+
+.drawer-header .file-badge {
+    display: block;
+    border-radius: 100%;
+    padding-top: 1rem;
+
+    color: white;
+    background-color: #c13f32;
+
+    width: 5rem;
+    height: 5rem;
+
+    text-align: center;
+}
+
+.btn {
+    background-color: #3a74b1;
+}
+
+.btn:hover {
+    background-color: #4284c9;
+}
+
+.file-badge h5 {
+    font-weight: 900;
+}
+
+/*************************/
+/* Specific components   */
+/*************************/
+
+.collapsible-header  {
+    background-color: #5b6a74;
+}
+
+.collapsible-body {
+    padding: 1rem;
+    background-color: #526069;
+}
+
+.collapsible, .collapsible-header, .collapsible-body {
+    border-color: #46525c;
+}
+
+.tools .btn {
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.tools .btn.selected {
+    background-color: #E74C3C;
+}
+
+.tools .btn img {
+    height: 100%;
+}
+
+.quick-tools {
+    position: fixed;
+    bottom: 0; left: 25rem;
+}
+
+.quick-tools > * {
+    opacity: 1;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="gabrielArchitect">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Editor | Gabriel</title>
+
+    <!-- CSS files -->
+    <!-- TODO: We cannot have hosted links in apps that go offline: -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.css"/>
+    <link rel="stylesheet" href="css/gabriel.css"/>
+    <link rel="stylesheet" href="css/editor-components.css"/>
+    <link rel="stylesheet" href="css/editor-environment.css"/>
+
+    <!-- Script files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="../bower_components/materialize/dist/js/materialize.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+
+    <!-- Angular App -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/ShellController.js"></script>
+    <script src="js/services/HotkeyService.js"></script>
+    <script src="js/services/SvgPanZoomService.js"></script>
+    <script src="js/controllers/SvgController.js"></script>
+    <script src="js/directives/SvgMapDirective.js"></script>
+
+    <!-- Map Script files -->
+    <script src="js/svg-pan-zoom.min.js"></script>
+
+</head>
+<body class="relative" ng-controller="ShellController as shell" ng-keyup="shell.keyboard.keyUp($event)" ng-keydown="shell.keyboard.keyDown($event)">
+
+<aside id="toolDrawer" class="drawer-left open">
+    <div class="drawer-header">
+        <h3 class="file-badge">P</h3>
+        <h5 class="margin-1-top">Project name</h5>
+        <p>Facility in Graz mechatronics</p>
+    </div>
+
+    <ul class="collapsible tools" data-collapsible="expandable">
+        <li>
+            <div class="collapsible-header"><i class="material-icons">build</i>Tools</div>
+            <div class="collapsible-body">
+                <button ng-click="shell.selectTool('pointer')" ng-class="{selected:shell.selectedTool == 'pointer'}" onfocus="this.blur()" class="waves-effect waves-light btn selected"><img src="img/icon_pointer.svg"></button>
+                <button ng-click="shell.selectTool('building')" ng-class="{selected:shell.selectedTool == 'building'}" onfocus="this.blur()" class="waves-effect waves-light btn"><img src="img/icon_building.svg"></button>
+                <button ng-click="shell.selectTool('wall')" ng-class="{selected:shell.selectedTool == 'wall'}" onfocus="this.blur()" class="waves-effect waves-light btn"><img src="img/icon_room.svg"></button>
+                <button ng-click="shell.selectTool('beacon')" ng-class="{selected:shell.selectedTool == 'beacon'}" onfocus="this.blur()" class="waves-effect waves-light btn"><img src="img/icon_beacon.svg"></button>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">visibility</i>Tool options</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">settings</i>Document settings</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+    </ul>
+</aside>
+
+<div class="map-container">
+    <svg-map></svg-map>
+    <div class="quick-tools">
+        <a ng-click="svgCtrl.increaseGrid()" class="btn-floating waves-effect waves-light red margin-1"><i class="material-icons">add</i></a>
+        <a ng-click="svgCtrl.decreaseGrid()" class="btn-floating waves-effect waves-light red"><i class="material-icons">remove</i></a>
+    </div>
+</div>
+
+</body>
+</html>

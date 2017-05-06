@@ -1,0 +1,72 @@
+/*
+    Gabriel control-room web-app site-wide styling
+    @author rafael.mindreau
+
+    This file contains very global fixes for the website
+    Also contains utilities commonly used by the team
+
+*/
+
+/* Get rid of browser-standard margins on used elements */
+body, html, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/* App-mode scaling */
+html, body {
+    height: 100%;
+}
+
+/*************************/
+/*       Utilities       */
+/*************************/
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.margin-1 {
+    margin: 1rem;
+}
+
+.margin-1-top {
+    margin-top: 1rem;
+}
+
+.viewer {
+   height: calc(100% - 3.5rem);
+}
+
+.clearfix {
+    overflow: auto;
+    zoom: 1;
+}
+
+/*************************/
+/*         Colors        */
+/*************************/
+
+.bg-black {
+    background-color: #000000!important;
+}
